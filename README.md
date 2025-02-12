@@ -31,7 +31,7 @@ git clone https://github.com/majam02/mensagl.git
 cd mensagl
 ```
 
-2. Dentro de `aws scripts` ejecuta `installation.sh` 🧑‍💻
+2. Dentro de `aws-cli` ejecuta `installation.sh` 🧑‍💻
 
 ```bash
 cd 'aws-cli'
