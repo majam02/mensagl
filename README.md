@@ -1,5 +1,3 @@
-LA VPC TIENE QUE SER LA 10.2XX.0.0/16
-
 # MensAGL 🔥 LosCowboysDelInfierno 🔥
 
 Un servidor de comunicaciones unificadas que incluye mensajería instántanea, llamadas y videoconferencia.
@@ -29,8 +27,8 @@ El servicio de incidencias se compone de:
 1. Clona el repositorio ♻️
 
 ```bash
-git clone https://github.com/cfuentesc01/mensagl-equipo2.git
-cd mensagl-equipo2
+git clone https://github.com/majam02/mensagl.git
+cd mensagl
 ```
 
 2. Dentro de `aws scripts` ejecuta `installation.sh` 🧑‍💻
@@ -38,7 +36,7 @@ cd mensagl-equipo2
 ```bash
 cd 'aws-cli'
 chmod +x start.sh
-./istart.sh
+./instart.sh
 ```
 Tambíen existen otros scripts de AWS CLI para crear objetos en AWS de forma separada.
 
