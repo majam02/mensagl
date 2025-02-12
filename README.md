@@ -31,12 +31,12 @@ git clone https://github.com/majam02/mensagl.git
 cd mensagl
 ```
 
-2. Dentro de `aws-cli` ejecuta `installation.sh` 🧑‍💻
+2. Dentro de `aws-cli` ejecuta `setup.sh` 🧑‍💻
 
 ```bash
 cd 'aws-cli'
 chmod +x start.sh
-./instart.sh
+./setup.sh
 ```
 Tambíen existen otros scripts de AWS CLI para crear objetos en AWS de forma separada.
 
