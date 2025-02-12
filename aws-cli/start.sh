@@ -61,7 +61,7 @@ DESCRIPTION="Mensagl Security groups"
 MY_IP="0.0.0.0/0"
 
 # Create VPC
-VPC_ID=$(aws ec2 create-vpc --cidr-block "10.0.0.0/16" --instance-tenancy "default" \
+VPC_ID=$(aws ec2 create-vpc --cidr-block "10.201.0.0/16" --instance-tenancy "default" \
   --tag-specifications "ResourceType=vpc,Tags=[{Key=Name,Value=${VPC_NAME}-vpc}]" \
   --query 'Vpc.VpcId' --output text)
 aws ec2 modify-vpc-attribute --vpc-id $VPC_ID --enable-dns-hostnames
