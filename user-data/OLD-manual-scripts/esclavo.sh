@@ -1,6 +1,14 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+#
+# OLD SCRIPT
+#
+# Este script es una version antigua de la creacion de un servidor MySQL esclavo
+# Aun sigue funcionando, pero esta en deshuso
+# Sirve para orientarse sobre el funcionamiento de este servicio
 
-MASTER_IP="10.0.1.10"
+MASTER_IP="10.201.1.10"
 MASTER_USER="replicador"
 MASTER_PASSWORD="Admin123"
 

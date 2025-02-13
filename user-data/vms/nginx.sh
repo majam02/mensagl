@@ -1,4 +1,7 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+# Plantilla script para configurar el servidor PROXY 1
 
 export DUCKDNS_TOKEN="${DUCKDNS_TOKEN}"
 export DUCKDNS_SUBDOMAIN="${DUCKDNS_SUBDOMAIN}"
@@ -18,7 +21,7 @@ sudo snap set certbot trust-plugin-with-root=ok
 sudo snap connect certbot:plugin certbot-dns-duckdns
 
 
-
+# DDNS (DuckDNS crontab)
 echo "Setting up DuckDNS update script..."
 mkdir -p /opt/duckdns
 cat <<DUCKDNS_SCRIPT > /opt/duckdns/duckdns.sh
@@ -28,12 +31,11 @@ curl -k "https://www.duckdns.org/update?domains=${DUCKDNS_SUBDOMAIN}&token=${DUC
 DUCKDNS_SCRIPT
 chmod +x /opt/duckdns/duckdns.sh
 (crontab -l 2>/dev/null; echo "*/5 * * * * /opt/duckdns/duckdns.sh >/dev/null 2>&1") | crontab -
-
 echo "Updating DuckDNS IP..."
 /opt/duckdns/duckdns.sh
 
-sleep 10
 
+sleep 10
 #while [ ! -e /etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}.duckdns.org ]; do
 sudo certbot certonly  --non-interactive \
     --agree-tos \
@@ -56,9 +58,8 @@ sudo certbot certonly  --non-interactive \
 #done
 
 
-# Install and configure NGINX
+# Configure NGINX
 echo "Installing and configuring NGINX..."
-
 cat <<EOF > /etc/nginx/sites-available/proxy_site
 upstream backend_meets {
     server 10.201.3.100:443;
@@ -254,7 +255,7 @@ echo "DDNS installed !"
 
 
 
-
+# Script inside VM (to make certs manually in case it breakes)
 cat <<CERT > /home/ubuntu/certs.sh
 #!/bin/bash
 sudo systemctl stop nginx

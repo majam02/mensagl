@@ -1,5 +1,12 @@
 #!/bin/bash
-
+#
+# Mario Aja Moral
+#
+# OLD SCRIPT
+#
+# Este script es una version de prueba para el uso de rsync
+# Aun sigue funcionando, pero esta en deshuso
+# Sirve para orientarse sobre el funcionamiento de este servicio
 
 MAESTRO_USER="osboxes"  
 MAESTRO_IP="192.168.31.221" 

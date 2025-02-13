@@ -1,11 +1,13 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+# Script principal automatizando todos lo referente al laboratorio AWS
+
 
 # Import certs manually on XMPP
-
 # sudo prosodyctl --root cert import /etc/certs/
 
 # Delete RDS Manually
-
 #aws rds delete-db-instance \
 #    --db-instance-identifier "wordpress-db" \
 #    --skip-final-snapshot \
@@ -13,7 +15,6 @@
 #aws rds describe-db-instances --db-instance-identifier "wordpress-db"
 #aws rds delete-db-subnet-group --db-subnet-group-name wp-rds-subnet-group
 #aws rds describe-db-subnet-groups --db-subnet-group-name wp-rds-subnet-group
-
 
 
 # The name of the user for lab

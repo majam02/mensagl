@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+#
+# OLD SCRIPT
+#
+# Este script es una version antigua para la creacion de los certificados
+# Aun sigue funcionando, pero esta en deshuso
 
 printf "%s" "Insert Domain Name: "
 read domain

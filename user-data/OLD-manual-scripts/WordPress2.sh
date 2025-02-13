@@ -1,4 +1,14 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+#
+# OLD SCRIPT
+#
+# Este script es una version antigua de la creacion de un servidor Wordpress (similar a wordpress1.sh)
+# Aun sigue funcionando, pero esta en deshuso
+# Sirve para orientarse sobre el funcionamiento de este servicio
+
+
 set -e
 
 # The mail for certs and wordpress config

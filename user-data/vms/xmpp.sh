@@ -1,15 +1,19 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+# Plantilla script para configurar el servidor XMPP 1 y 2
+
 set -e
 export DUCKDNS_SUBDOMAIN="${DUCKDNS_SUBDOMAIN}"
 export DB_USERNAME="${DB_USERNAME}"
 export DB_PASSWORD="${DB_PASSWORD}"
 
 sudo apt update -y
-
 sudo apt install prosody -y
 sudo apt install lua-dbi-mysql lua-dbi-postgresql lua-dbi-sqlite3 -y
 sudo rm -rf /etc/prosody/prosody.cfg.lua
 
+# Config XMPP Prosody file
 echo "
 plugin_paths = { '/usr/src/prosody-modules' } -- non-standard plugin path so we can keep them up to date with mercurial
 modules_enabled = {
@@ -98,10 +102,12 @@ ssl = {
 }
 " | sudo tee -a /etc/prosody/prosody.cfg.lua > /dev/null 
 
+# MySQL creation DB after cluster MySQL
 sudo apt install mysql-client mysql-server -y
 sleep 360
 sudo mysql -h "10.201.3.10" -u "${DB_USERNAME}" -p"${DB_PASSWORD}" -e "CREATE DATABASE IF NOT EXISTS xmpp_db;"
 
+# Add Users to Prosody
 sudo systemctl restart prosody
 sudo prosodyctl register mario ${DUCKDNS_SUBDOMAIN}.duckdns.org Admin123
 sudo prosodyctl register carlos ${DUCKDNS_SUBDOMAIN}.duckdns.org Admin123

@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Mario Aja Moral
+# Plantilla script para configurar el servidor NAS RSYNC (in develompent)
+
 
 # Install mdadm
 apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y mdadm
