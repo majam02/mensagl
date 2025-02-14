@@ -27,9 +27,9 @@ read EMAIL
 # DuckDNS variables
 printf "%s" "DuckDNS token: "
 read DUCKDNS_TOKEN
-printf "%s" "DuckDNS domain-xmpp: "
+printf "%s" "DuckDNS domain-xmpp (without .duckdns.org): "
 read DUCKDNS_SUBDOMAIN
-printf "%s" "DuckDNS domain-wp: "
+printf "%s" "DuckDNS domain-wp (without .duckdns.org): "
 read DUCKDNS_SUBDOMAIN2
 
 # Key pair SSH
