@@ -293,7 +293,7 @@ chmod +x /home/ubuntu/certs.sh
 apt install coturn -y
 cat <<COTURN > /etc/turnserver.conf
 syslog
-realm=${DUCKDNS_SUBDOMAIN}
+realm=${DUCKDNS_SUBDOMAIN}.duckdns.org
 listening-port=3478
 tls-listening-port=5349
 relay-threads=0
