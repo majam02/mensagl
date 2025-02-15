@@ -287,3 +287,26 @@ sudo systemctl start nginx
 sudo systemctl restart nginx
 CERT
 chmod +x /home/ubuntu/certs.sh
+
+
+#Coturn Server
+apt install coturn -y
+cat <<COTURN > /etc/turnserver.conf
+syslog
+realm=${DUCKDNS_SUBDOMAIN}
+listening-port=3478
+tls-listening-port=5349
+relay-threads=0
+min-port=50000
+max-port=50010
+no-tcp
+no-tcp-relay
+cert=/etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}/fullchain.pem
+pkey=/etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}/privkey.pem
+use-auth-secret
+static-auth-secret=_Admin123
+listening-ip=10.201.1.10
+relay-ip=10.201.1.10
+COTURN
+systemctl restart coturn
+systemctl enable coturn 
