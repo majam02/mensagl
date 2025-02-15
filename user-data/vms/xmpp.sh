@@ -54,6 +54,11 @@ modules_enabled = {
                 'scansion_record';
                 'server_contact_info';
 };
+
+turn_external_host = ${DUCKDNS_SUBDOMAIN}.duckdns.org
+turn_external_port = 3478
+turn_external_secret = "_Admin123"
+
 allow_registration = false; -- Enable to allow people to register accounts on your server from their clients, for more information see http://prosody.im/doc/creating_accounts
 certificates = '/etc/prosody/certs' -- Path where prosody looks for the certificates see: https://prosody.im/doc/letsencrypt
 --https_certificate = 'certs/lobby.${DUCKDNS_SUBDOMAIN}.duckdns.org.crt'
