@@ -301,8 +301,8 @@ min-port=50000
 max-port=50010
 no-tcp
 no-tcp-relay
-cert=/etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}/fullchain.pem
-pkey=/etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}/privkey.pem
+cert=/etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}.duckdns.org/fullchain.pem
+pkey=/etc/letsencrypt/live/${DUCKDNS_SUBDOMAIN}.duckdns.org/privkey.pem
 use-auth-secret
 static-auth-secret=_Admin123
 listening-ip=10.201.1.10
